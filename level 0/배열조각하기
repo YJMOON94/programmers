@@ -1,0 +1,15 @@
+function solution(arr, query) {
+    let answer;
+    let front = 0;
+    let back = 0;
+    
+    for(let i=0; i<query.length; i++){
+        if(i % 2 === 0){
+            back = front + query[i]
+        }else{
+            front += query[i]
+        }     
+    }
+   
+    return arr.slice(front,back).length ? arr.slice(front,back) : [-1]
+}

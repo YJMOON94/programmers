@@ -1,0 +1,20 @@
+function solution(number, limit, power) {
+    let warrier = [];
+
+    for(let i = 1; i<=number; i++){
+        let wepone = 0;
+
+        for(let j=1; j<= i/2; j++){
+            if(i % j === 0)
+                wepone++
+        }
+
+        warrier.push(wepone + 1);
+    };
+
+    return warrier
+        .map( val => (
+            val > limit ? power : val
+        ))
+        .reduce( (a,b) => a+b)
+}
